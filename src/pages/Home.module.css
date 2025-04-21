@@ -1,0 +1,48 @@
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* still fill the screen */
+    display: flex;
+    align-items: flex-start;
+    /* push content to top */
+    justify-content: center;
+    /* keep it centered horizontally */
+    padding-top: 5rem;
+    /* adjust this to taste */
+    background-size: cover;
+    background-position: center;
+}
+
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+
+    /* optional: pull it up slightly more */
+    margin-top: -2rem;
+}
+
+
+.title {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    opacity: 0.8;
+}
+
+.heroImage {
+    width: 150px;
+    /* or whatever size you prefer */
+    height: auto;
+    border-radius: 50%;
+    margin: 1rem 0;
+}

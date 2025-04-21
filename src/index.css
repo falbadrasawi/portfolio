@@ -1,13 +1,42 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/index.css */
+
+:root {
+  /* terminal theme variables */
+  --terminal-bg: #000000;
+  --terminal-text: #ffffff;
+  --terminal-font: 'Courier New', Courier, monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Apply globally */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: var(--terminal-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  color: var(--terminal-text);
+  text-decoration: underline;
+}
+
+/* Buttons, inputs, etc. */
+button,
+input,
+textarea {
+  background: none;
+  border: 1px solid var(--terminal-text);
+  color: var(--terminal-text);
+  font-family: var(--terminal-font);
+}
+
+/* Code blocks and preformatted */
+code,
+pre {
+  font-family: var(--terminal-font);
 }

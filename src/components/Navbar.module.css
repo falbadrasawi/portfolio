@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: var(--terminal-bg);
+    border-bottom: 1px solid var(--terminal-text);
+}
+
+.brand a {
+    color: var(--terminal-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navLinks a {
+    color: var(--terminal-text);
+    text-decoration: none;
+}
+
+.navLinks a:hover {
+    text-decoration: underline;
+}

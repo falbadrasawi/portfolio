@@ -1,0 +1,16 @@
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--terminal-text);
+    background-color: var(--terminal-bg);
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--terminal-text);
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+}

@@ -1,72 +1,63 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Built using React, GH Pages and a few different libraries for functionality. 
 
-## Available Scripts
+Utilitzed a very simple build process using a black background and a terminal-esque font. I'm a big fan of that style and want to keep my theme computer based. 
+Navigation is really easy using react router, it works very well with GH pages unlike React Native which was unconfigurable for the platform from my experience but maybe brighter minds have figured it out. 
 
-In the project directory, you can run:
+The about is short sweet and simple, and all pages have header and footer components to easily navigate pgaes and inspect the source code if need be. 
 
-### `npm start`
+## Project Description and Tasks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+For this final project, you will build a personal portfolio website using React.js. This project will showcase your skills, projects, experience, and any additional information you’d like to highlight. The goal is to create a responsive, interactive, and professional portfolio that you can use beyond this course.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Project Requirements:
+1. Project Structure & Setup
+Use Create React App or Vite to set up your React project.
 
-### `npm test`
+Organize your project with clear folder structure (e.g., components, assets, pages).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use React Router for navigation (if using multiple pages).
 
-### `npm run build`
+Deploy your project using GitHub Pages, Netlify, or Vercel.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Required Pages & Components
+Home Page: Introduce yourself with a welcome message and background image.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+About Page: Brief bio, skills, and interests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Projects Page: Showcase at least three projects with descriptions, links, and images.
 
-### `npm run eject`
+Contact Page: Include a contact form and social media links (or) a contact section with the relevant details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Navbar & Footer: Persistent navigation and footer with relevant links.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The portfolio can be designed as either a single-page application (SPA) or a multi-page website based on your preference.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Styling & UI
+Use CSS modules, Tailwind CSS, or Styled Components for styling.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ensure responsiveness across desktop, tablet, and mobile views.
 
-## Learn More
+Maintain a consistent theme and color scheme.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Interactivity & Features
+Form Validation: Validate input fields in the contact form.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Smooth Scrolling & Animations: Use Framer Motion or React Spring for animations.
 
-### Code Splitting
+5. Version Control & Documentation
+Use Git & GitHub for version control.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Include a README.md with project description, setup instructions, and features.
 
-### Analyzing the Bundle Size
+Submission Guidelines:
+Submit your GitHub repository link.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Deploy your project and share the live URL.
 
-### Making a Progressive Web App
+Provide a short demo video (2-3 minutes) explaining your project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Project Preview 
+https://youtu.be/2vBjd67TiOU
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# portfolio

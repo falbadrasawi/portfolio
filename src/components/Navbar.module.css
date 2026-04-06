@@ -1,31 +1,59 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    background-color: var(--terminal-bg);
-    border-bottom: 1px solid var(--terminal-text);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(10, 11, 13, 0.92) 0%, rgba(10, 11, 13, 0.72) 100%);
+  backdrop-filter: blur(18px);
 }
 
 .brand a {
-    color: var(--terminal-text);
-    font-weight: bold;
-    text-decoration: none;
+  border-bottom: none;
+  color: var(--text-primary);
+  font-family: var(--display-font);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 }
 
 .navLinks {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navLinks a {
-    color: var(--terminal-text);
-    text-decoration: none;
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
-.navLinks a:hover {
-    text-decoration: underline;
+.navLink:hover,
+.active {
+  color: var(--text-primary);
+  border-color: var(--line);
+  background: var(--surface-soft);
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem;
+  }
 }

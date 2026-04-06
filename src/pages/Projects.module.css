@@ -1,159 +1,202 @@
-:root {
-    --terminal-text: #ffffff;
-}
-
 .container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 0 1rem;
 }
 
 .project {
-    margin-bottom: 2rem;
+  padding: 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(241, 180, 104, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  box-shadow: var(--shadow);
+}
+
+.project + .project {
+  margin-top: 1.5rem;
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .title {
-    font-size: 1.75rem;
-    margin-bottom: 0.25rem;
-    border-bottom: 1px solid var(--terminal-text);
-    padding-bottom: 0.25rem;
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
 }
 
 .link {
-    display: inline-block;
-    margin-bottom: 1rem;
-    color: var(--terminal-text);
-    text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.link:hover {
+  background: var(--surface-soft);
 }
 
 .content {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
 }
 
-/* Carousel */
+.description {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+  font-size: 1rem;
+}
+
 .carousel {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    flex-shrink: 0;
+  width: 100%;
 }
 
 .image {
-    width: 100%;
-    max-height: 250px;
-    object-fit: contain;
-    display: block;
-    border: 1px solid var(--terminal-text);
-    cursor: pointer;
+  width: 100%;
+  min-height: 250px;
+  object-fit: contain;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(11, 13, 16, 0.85);
+  cursor: pointer;
 }
 
 .indicator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.navButton,
+.modalArrow,
+.modalClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(12, 14, 17, 0.78);
+  color: var(--text-primary);
 }
 
 .navButton {
-    background: none;
-    border: none;
-    color: var(--terminal-text);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
-.navButton:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+.navButton:hover,
+.modalArrow:hover,
+.modalClose:hover {
+  background: var(--surface-soft);
 }
 
-.counter {
-    min-width: 3ch;
-    text-align: center;
+.counter,
+.modalIndicator {
+  color: var(--text-secondary);
+  font-weight: 700;
 }
 
-/* Divider */
-.divider {
-    border: none;
-    border-top: 1px solid var(--terminal-text);
-    margin: 2rem 0;
-}
-
-/* Modal Overlay */
 .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(5, 6, 8, 0.82);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
 }
 
 .modalContent {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  width: min(960px, 100%);
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
 }
 
 .modalCarousel {
-    display: flex;
-    align-items: center;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
 }
 
 .modalImage {
-    max-width: 100%;
-    max-height: calc(100vh - 150px);
-    object-fit: contain;
-    border: 1px solid var(--terminal-text);
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(7, 8, 10, 0.95);
 }
 
 .modalClose {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    color: var(--terminal-text);
-    font-size: 2rem;
-    cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 800;
 }
 
 .modalArrow {
-    background: none;
-    border: none;
-    color: var(--terminal-text);
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0 1rem;
-}
-
-.modalArrow:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+  width: 2.9rem;
+  height: 2.9rem;
+  font-size: 1.1rem;
+  font-weight: 800;
 }
 
 .modalIndicator {
-    margin-top: 0.5rem;
-    color: var(--terminal-text);
-    font-size: 0.9rem;
+  margin-top: 0.85rem;
+  text-align: center;
 }
 
-/* Responsive: stack description under carousel on narrow screens */
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
+@media (max-width: 860px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .project {
+    padding: 1.2rem;
+  }
+
+  .modalContent {
+    padding: 0.85rem;
+  }
+
+  .modalCarousel {
+    grid-template-columns: 1fr;
+  }
+
+  .modalArrow {
+    width: 100%;
+    height: 2.75rem;
+  }
 }

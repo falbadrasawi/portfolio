@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -8,16 +7,15 @@ import AppRoutes from './routes';
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Navbar />
-      <main style={{ flex: 1 }}>
-        <AppRoutes />
-      </main>
-      <Footer />
+      <div className="app-shell">
+        <Navbar />
+        <main className="app-content">
+          <AppRoutes />
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-
-
-

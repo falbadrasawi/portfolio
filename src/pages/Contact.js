@@ -1,64 +1,63 @@
-// src/pages/Contact.js
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import styles from './Contact.module.css';
 
 export default function Contact() {
-  // — state for form data
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-  // — validation errors
   const [errors, setErrors] = useState({});
-  // — tracks if we showed success message
   const [success, setSuccess] = useState(false);
 
-  // simple field‐by‐field validation
   const validate = () => {
-    const errs = {};
-    if (!formData.name.trim()) errs.name = 'Name is required';
+    const validationErrors = {};
+
+    if (!formData.name.trim()) validationErrors.name = 'Name is required';
+
     if (!formData.email) {
-      errs.email = 'Email is required';
+      validationErrors.email = 'Email is required';
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      errs.email = 'Email is invalid';
+      validationErrors.email = 'Email is invalid';
     }
-    if (!formData.message.trim()) errs.message = 'Message is required';
-    return errs;
+
+    if (!formData.message.trim()) validationErrors.message = 'Message is required';
+
+    return validationErrors;
   };
 
-  // keep track of each field
-  const handleChange = e => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  // on submit, validate & send via EmailJS
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     const validationErrors = validate();
-    if (Object.keys(validationErrors).length) {
+
+    if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
+
     setErrors({});
 
-    const SERVICE_ID  = 'service_mqfxlrf';
-    const TEMPLATE_ID = 'template_3o6955o';
-    // (emailjs.init was called once in index.js with your PUBLIC_KEY)
+    const serviceId = 'service_mqfxlrf';
+    const templateId = 'template_3o6955o';
 
     emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, {
-        from_name:  formData.name,
+      .send(serviceId, templateId, {
+        from_name: formData.name,
         from_email: formData.email,
-        message:    formData.message,
+        message: formData.message,
       })
       .then(() => {
         setSuccess(true);
         setFormData({ name: '', email: '', message: '' });
       })
-      .catch(err => {
-        console.error('EmailJS error:', err);
+      .catch((error) => {
+        console.error('EmailJS error:', error);
         setErrors({ form: 'Failed to send. Please try again later.' });
       });
   };
@@ -66,8 +65,14 @@ export default function Contact() {
   return (
     <div className={styles.container}>
       <h2 className={styles.heading}>Contact Me</h2>
+      <p className={styles.intro}>
+        If you have a project, collaboration, or role in mind, send me a note and
+        I&apos;ll get back to you soon.
+      </p>
 
-      {success && <p className={styles.success}>✅ Your message has been sent!</p>}
+      {success && (
+        <p className={styles.success}>Your message has been sent successfully.</p>
+      )}
       {errors.form && <p className={styles.error}>{errors.form}</p>}
 
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
@@ -156,4 +161,3 @@ export default function Contact() {
     </div>
   );
 }
-

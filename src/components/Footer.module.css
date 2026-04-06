@@ -1,16 +1,17 @@
 .footer {
-    text-align: center;
-    padding: 1rem 0;
-    border-top: 1px solid var(--terminal-text);
-    background-color: var(--terminal-bg);
-    font-size: 0.9rem;
+  margin-top: auto;
+  padding: 1.2rem 1rem 1.6rem;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(13, 15, 18, 0.28) 0%, rgba(10, 11, 13, 0.78) 100%);
+  text-align: center;
+}
+
+.footer p {
+  margin: 0.25rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 .footer a {
-    color: var(--terminal-text);
-    text-decoration: underline;
-}
-
-.footer a:hover {
-    opacity: 0.8;
+  border-bottom-color: rgba(241, 180, 104, 0.35);
 }

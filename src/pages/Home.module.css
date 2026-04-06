@@ -1,48 +1,84 @@
 .container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* still fill the screen */
-    display: flex;
-    align-items: flex-start;
-    /* push content to top */
-    justify-content: center;
-    /* keep it centered horizontally */
-    padding-top: 5rem;
-    /* adjust this to taste */
-    background-size: cover;
-    background-position: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5.25rem) 0 1.5rem;
 }
 
-
-.overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    text-align: center;
-    border-radius: 8px;
-
-    /* optional: pull it up slightly more */
-    margin-top: -2rem;
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(241, 180, 104, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  box-shadow: var(--shadow);
 }
 
+.copy {
+  max-width: 44rem;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-family: var(--display-font);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
 
 .title {
-    margin: 0;
-    font-size: 3rem;
+  margin: 0 0 1rem;
+  font-size: clamp(2.75rem, 7vw, 5rem);
+  letter-spacing: 0.04em;
+  line-height: 0.96;
 }
 
 .subtitle {
-    margin-top: 0.5rem;
-    font-size: 1.25rem;
-    opacity: 0.8;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.lede {
+  max-width: 34rem;
+  font-size: 1.04rem;
+}
+
+.portraitPanel {
+  justify-self: center;
+  width: min(100%, 320px);
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(241, 180, 104, 0.24), transparent 44%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .heroImage {
-    width: 150px;
-    /* or whatever size you prefer */
-    height: auto;
-    border-radius: 50%;
-    margin: 1rem 0;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 820px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .portraitPanel {
+    order: -1;
+    width: min(100%, 280px);
+  }
 }

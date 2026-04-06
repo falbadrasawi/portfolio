@@ -1,4 +1,3 @@
-// src/routes.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -13,7 +12,6 @@ export default function AppRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
-      {/* optional catch‑all: */}
       <Route path="*" element={<Home />} />
     </Routes>
   );

@@ -52,17 +52,19 @@ function ImageCarousel({ images, onImageClick }) {
 
   return (
     <div className={styles.carousel}>
-      <img
-        src={currentImage.src}
-        alt={`Screenshot ${current + 1} of ${images.length}`}
-        className={styles.image}
-        onClick={() => onImageClick(current)}
-        width={currentImage.width}
-        height={currentImage.height}
-        loading="lazy"
-        decoding="async"
-        sizes="(max-width: 860px) calc(100vw - 2.4rem), 420px"
-      />
+      <div className={styles.previewFrame}>
+        <img
+          src={currentImage.src}
+          alt={`Screenshot ${current + 1} of ${images.length}`}
+          className={styles.image}
+          onClick={() => onImageClick(current)}
+          width={currentImage.width}
+          height={currentImage.height}
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 860px) calc(100vw - 2.4rem), 420px"
+        />
+      </div>
 
       <div className={styles.indicator}>
         <button

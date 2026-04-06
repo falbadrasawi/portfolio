@@ -8,16 +8,20 @@ export default function About() {
       <h2 className={styles.heading}>About Me</h2>
 
       <div className={styles.content}>
-        <img
-          src={profilePic}
-          alt="Fadi Albadrasawi"
-          className={styles.profilePic}
-          width="640"
-          height="749"
-          loading="lazy"
-          decoding="async"
-          sizes="(max-width: 760px) 180px, 160px"
-        />
+        <div className={styles.profilePanel}>
+          <div className={styles.profileFrame}>
+            <img
+              src={profilePic}
+              alt="Fadi Albadrasawi"
+              className={styles.profilePic}
+              width="640"
+              height="749"
+              loading="lazy"
+              decoding="async"
+              sizes="(max-width: 760px) 150px, 150px"
+            />
+          </div>
+        </div>
         <p className={styles.bio}>
           I'm Fadi Albadrasawi, a frontend developer and product designer
           pursuing a BA in Digital Media with a concentration in web design and

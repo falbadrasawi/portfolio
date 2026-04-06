@@ -20,17 +20,19 @@ export default function Home() {
         </div>
 
         <div className={styles.portraitPanel}>
-          <img
-            src={fadiImage}
-            alt="Fadi Albadrasawi"
-            className={styles.heroImage}
-            width="640"
-            height="749"
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-            sizes="(max-width: 820px) 280px, 320px"
-          />
+          <div className={styles.portraitFrame}>
+            <img
+              src={fadiImage}
+              alt="Fadi Albadrasawi"
+              className={styles.heroImage}
+              width="640"
+              height="749"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              sizes="(max-width: 820px) 165px, 195px"
+            />
+          </div>
         </div>
       </section>
     </div>

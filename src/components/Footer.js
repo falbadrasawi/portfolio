@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <p>&copy; {new Date().getFullYear()} Fadi Albadrasawi.</p>
       <p>
-        Designed and built with React, motion, and strong coffee.{' '}
+        Designed and built by me and instant coffee.{' '}
         <a
           href="https://github.com/falbadrasawi/portfolio"
           target="_blank"

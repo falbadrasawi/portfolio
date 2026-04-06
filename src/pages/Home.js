@@ -7,15 +7,15 @@ export default function Home() {
     <div className={styles.container}>
       <section className={styles.hero}>
         <div className={styles.copy}>
-          <p className={styles.eyebrow}>Frontend Developer and Product Designer</p>
+          <p className={styles.eyebrow}>Web & App Developer</p>
           <h1 className={styles.title}>Fadi Albadrasawi</h1>
           <p className={styles.subtitle}>
-            I build clear, polished digital experiences that balance product
-            thinking, interface design, and frontend execution.
+            I build high performing, search engine optimized and accessibile digital experiences
+            that shape a great future for your next project.
           </p>
           <p className={styles.lede}>
-            From websites and mobile apps to VR, AR, and MR concepts, I enjoy
-            turning ambitious ideas into work that feels intuitive on day one.
+            From websites and mobile apps to VR and AR experiences, there's no better feeling than
+            turning ambitious ideas into real life user applications.
           </p>
         </div>
 

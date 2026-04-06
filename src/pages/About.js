@@ -30,6 +30,13 @@ export default function About() {
           decision-making process behind virtual environments with physical
           goods and services.
         </p>
+        <p className={styles.bio}>
+          My current clients include one of the largest healthcare and education staffing
+          companies in the United States.
+        </p>
+        <p className={styles.bio}>
+          Outside of work you can either catch me with my daughter on the playground or trying to break 180ft drives to no avail at the driving range.
+        </p>
       </div>
 
       <div className={styles.sections}>

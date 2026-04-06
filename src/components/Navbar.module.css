@@ -55,5 +55,7 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 1rem;
+    background: rgba(10, 11, 13, 0.96);
+    backdrop-filter: none;
   }
 }

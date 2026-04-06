@@ -73,6 +73,11 @@
   background: rgba(241, 180, 104, 0.22);
 }
 
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.78;
+}
+
 .socials {
   margin-top: 1.5rem;
   padding: 1.35rem 1.5rem;
@@ -111,4 +116,12 @@
 
 .socials a:hover {
   background: var(--surface-soft);
+}
+
+@media (max-width: 640px) {
+  .form,
+  .socials {
+    box-shadow: none;
+    background: var(--surface);
+  }
 }

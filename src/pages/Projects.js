@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styles from './Projects.module.css';
 
-import proj1Img1 from '../assets/shft1.png';
+import proj1Img1 from '../assets/shft1-optimized.jpg';
 import proj1Img2 from '../assets/shft2.png';
 import proj1Img3 from '../assets/shft3.png';
-import proj2Img1 from '../assets/printii1.png';
-import proj2Img2 from '../assets/printii2.png';
-import proj2Img3 from '../assets/printii3.png';
-import proj3Img1 from '../assets/exerciseAppDesign.png';
+import proj2Img1 from '../assets/printii1-optimized.jpg';
+import proj2Img2 from '../assets/printii2-optimized.jpg';
+import proj2Img3 from '../assets/printii3-optimized.jpg';
+import proj3Img1 from '../assets/exerciseAppDesign-optimized.jpg';
 
 const projects = [
   {
@@ -15,7 +15,11 @@ const projects = [
     link: 'https://www.theshftapp.com/',
     description:
       'I served as Product Designer for TheSHFTApp, using Photoshop and Figma to shape the component system and translate the design into developer-ready JSX.',
-    images: [proj1Img1, proj1Img2, proj1Img3],
+    images: [
+      { src: proj1Img1, width: 1400, height: 2352 },
+      { src: proj1Img2, width: 790, height: 1711 },
+      { src: proj1Img3, width: 782, height: 1698 },
+    ],
   },
   {
     title: 'Printii',
@@ -23,7 +27,11 @@ const projects = [
     linkText: 'Printii Prototype',
     description:
       'I designed the full Printii prototype in Figma and continue to develop the product direction around a direct-to-consumer text-to-print workflow powered by Three.js, PHP, and MySQL.',
-    images: [proj2Img1, proj2Img2, proj2Img3],
+    images: [
+      { src: proj2Img1, width: 1400, height: 915 },
+      { src: proj2Img2, width: 1400, height: 931 },
+      { src: proj2Img3, width: 1400, height: 934 },
+    ],
   },
   {
     title: 'Exercise App',
@@ -31,12 +39,13 @@ const projects = [
     linkText: 'Visit Exercise App',
     description:
       'A React-based exercise application deployed to GitHub Pages with a simple, focused experience built on JSX, CSS, and reusable UI structure.',
-    images: [proj3Img1],
+    images: [{ src: proj3Img1, width: 1400, height: 1144 }],
   },
 ];
 
 function ImageCarousel({ images, onImageClick }) {
   const [current, setCurrent] = useState(0);
+  const currentImage = images[current];
 
   const prev = () => setCurrent((index) => (index - 1 + images.length) % images.length);
   const next = () => setCurrent((index) => (index + 1) % images.length);
@@ -44,10 +53,15 @@ function ImageCarousel({ images, onImageClick }) {
   return (
     <div className={styles.carousel}>
       <img
-        src={images[current]}
+        src={currentImage.src}
         alt={`Screenshot ${current + 1} of ${images.length}`}
         className={styles.image}
         onClick={() => onImageClick(current)}
+        width={currentImage.width}
+        height={currentImage.height}
+        loading="lazy"
+        decoding="async"
+        sizes="(max-width: 860px) calc(100vw - 2.4rem), 420px"
       />
 
       <div className={styles.indicator}>
@@ -142,9 +156,12 @@ export default function Projects() {
                 &lt;
               </button>
               <img
-                src={modalImages[modalIndex]}
+                src={modalImages[modalIndex].src}
                 alt={`Screenshot ${modalIndex + 1}`}
                 className={styles.modalImage}
+                width={modalImages[modalIndex].width}
+                height={modalImages[modalIndex].height}
+                decoding="async"
               />
               <button
                 type="button"

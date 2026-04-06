@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './About.module.css';
-import profilePic from '../assets/fadiImage.PNG';
+import profilePic from '../assets/fadiImage-optimized.jpg';
 
 export default function About() {
   return (
@@ -12,6 +12,11 @@ export default function About() {
           src={profilePic}
           alt="Fadi Albadrasawi"
           className={styles.profilePic}
+          width="640"
+          height="749"
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 760px) 180px, 160px"
         />
         <p className={styles.bio}>
           I'm Fadi Albadrasawi, a frontend developer and product designer

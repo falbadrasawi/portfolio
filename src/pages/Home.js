@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Home.module.css';
-import fadiImage from '../assets/fadiImage.PNG';
+import fadiImage from '../assets/fadiImage-optimized.jpg';
 
 export default function Home() {
   return (
@@ -24,6 +24,12 @@ export default function Home() {
             src={fadiImage}
             alt="Fadi Albadrasawi"
             className={styles.heroImage}
+            width="640"
+            height="749"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            sizes="(max-width: 820px) 280px, 320px"
           />
         </div>
       </section>

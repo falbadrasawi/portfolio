@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,7 +10,9 @@ function App() {
       <div className="app-shell">
         <Navbar />
         <main className="app-content">
-          <AppRoutes />
+          <Suspense fallback={<div className="route-fallback">Loading...</div>}>
+            <AppRoutes />
+          </Suspense>
         </main>
         <Footer />
       </div>

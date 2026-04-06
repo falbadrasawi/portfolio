@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -10,6 +9,7 @@ export default function Contact() {
   });
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
     const validationErrors = {};
@@ -28,10 +28,14 @@ export default function Contact() {
   };
 
   const handleChange = (event) => {
+    if (success) {
+      setSuccess(false);
+    }
+
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const validationErrors = validate();
@@ -42,24 +46,30 @@ export default function Contact() {
     }
 
     setErrors({});
+    setIsSubmitting(true);
 
     const serviceId = 'service_mqfxlrf';
     const templateId = 'template_3o6955o';
+    const publicKey = 'gIe1fPtsjMnXK9NsC';
 
-    emailjs
-      .send(serviceId, templateId, {
+    try {
+      const { default: emailjs } = await import('emailjs-com');
+      emailjs.init(publicKey);
+
+      await emailjs.send(serviceId, templateId, {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
-      })
-      .then(() => {
-        setSuccess(true);
-        setFormData({ name: '', email: '', message: '' });
-      })
-      .catch((error) => {
-        console.error('EmailJS error:', error);
-        setErrors({ form: 'Failed to send. Please try again later.' });
       });
+
+      setSuccess(true);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setErrors({ form: 'Failed to send. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -112,8 +122,8 @@ export default function Contact() {
           {errors.message && <span className={styles.error}>{errors.message}</span>}
         </div>
 
-        <button type="submit" className={styles.submit}>
-          Send Message
+        <button type="submit" className={styles.submit} disabled={isSubmitting}>
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
       </form>
 

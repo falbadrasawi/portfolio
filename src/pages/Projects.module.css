@@ -12,6 +12,8 @@
     radial-gradient(circle at 18% 12%, rgba(241, 180, 104, 0.1), transparent 28%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
   box-shadow: var(--shadow);
+  content-visibility: auto;
+  contain-intrinsic-size: 720px;
 }
 
 .project + .project {
@@ -180,6 +182,11 @@
   .content {
     grid-template-columns: 1fr;
   }
+
+  .project {
+    box-shadow: none;
+    background: var(--surface);
+  }
 }
 
 @media (max-width: 640px) {
@@ -189,6 +196,7 @@
 
   .modalContent {
     padding: 0.85rem;
+    box-shadow: none;
   }
 
   .modalCarousel {

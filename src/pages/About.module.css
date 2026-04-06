@@ -87,6 +87,12 @@
     grid-template-columns: 1fr;
   }
 
+  .content,
+  .section {
+    box-shadow: none;
+    background: var(--surface);
+  }
+
   .profilePic {
     max-width: 180px;
   }

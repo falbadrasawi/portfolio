@@ -1,0 +1,489 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 0 1rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.heroCopy,
+.detailsCard,
+.formCard {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(241, 180, 104, 0.1), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  box-shadow: var(--shadow);
+}
+
+.heroCopy {
+  height: 100%;
+  padding: 1.8rem;
+}
+
+.eyebrow {
+  margin-bottom: 0.9rem;
+  color: var(--accent);
+  font-family: var(--display-font);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 0 0 0.9rem;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 0.98;
+}
+
+.intro {
+  max-width: 42rem;
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+.detailsCard {
+  height: 100%;
+  padding: 1.6rem;
+}
+
+.cardHeading,
+.formHeading {
+  margin: 0 0 0.85rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.detailsList {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.detailsList li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--text-secondary);
+}
+
+.detailsList li::before {
+  content: '';
+  position: absolute;
+  top: 0.7rem;
+  left: 0;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.note,
+.formIntro {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+
+.formCard {
+  margin-top: 1.5rem;
+  padding: 1.7rem;
+}
+
+.formHeader {
+  max-width: 44rem;
+}
+
+.success,
+.error {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  font-weight: 700;
+}
+
+.success {
+  border: 1px solid rgba(141, 225, 182, 0.24);
+  background: rgba(141, 225, 182, 0.08);
+}
+
+.successTitle,
+.successCopy {
+  margin: 0;
+}
+
+.successCopy {
+  margin-top: 0.35rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.error {
+  border: 1px solid rgba(255, 156, 156, 0.24);
+  background: rgba(255, 156, 156, 0.08);
+  color: var(--error);
+}
+
+.errorText {
+  color: var(--error);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.form {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 1.25rem;
+}
+
+.fieldset {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+}
+
+.fieldset legend {
+  padding: 0 0.45rem;
+  color: var(--accent);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.modeGrid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.modeOption {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  position: relative;
+}
+
+.modeOption:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.modeOption:has(input:checked) {
+  border-color: rgba(241, 180, 104, 0.4);
+  background: rgba(241, 180, 104, 0.09);
+}
+
+.modeOption input {
+  position: absolute;
+  top: 1.2rem;
+  left: 1rem;
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+}
+
+.modeLabel {
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.modeOption:has(input:checked) .modeLabel {
+  color: var(--accent-strong);
+}
+
+.modeDescription {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.calendarPicker {
+  position: relative;
+}
+
+.calendarTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(12, 14, 17, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  text-align: left;
+}
+
+.calendarTrigger:hover {
+  border-color: rgba(241, 180, 104, 0.32);
+}
+
+.calendarTriggerInvalid {
+  border-color: rgba(255, 156, 156, 0.55);
+}
+
+.calendarValue {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.calendarPlaceholder {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.calendarIcon {
+  position: relative;
+  width: 1.1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  border: 1px solid rgba(241, 180, 104, 0.55);
+  border-radius: 0.3rem;
+}
+
+.calendarIcon::before,
+.calendarIcon::after {
+  content: '';
+  position: absolute;
+  top: -0.18rem;
+  width: 0.18rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.calendarIcon::before {
+  left: 0.22rem;
+}
+
+.calendarIcon::after {
+  right: 0.22rem;
+}
+
+.calendarPopover {
+  position: absolute;
+  top: calc(100% + 0.7rem);
+  left: 0;
+  z-index: 8;
+  width: min(100%, 22rem);
+  padding: 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top left, rgba(241, 180, 104, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(35, 40, 47, 0.98) 0%, rgba(19, 23, 28, 0.98) 100%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.85rem;
+}
+
+.calendarTitle {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--display-font);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.calendarNav {
+  min-width: 2.2rem;
+  min-height: 2.2rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(241, 180, 104, 0.28);
+  border-radius: 999px;
+  background: rgba(241, 180, 104, 0.08);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.calendarNav:hover:not(:disabled) {
+  background: rgba(241, 180, 104, 0.16);
+}
+
+.calendarNav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.calendarWeekdays,
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.calendarWeekdays {
+  margin-bottom: 0.45rem;
+}
+
+.calendarWeekday {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.calendarDay {
+  min-height: 2.45rem;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.calendarDay:hover:not(:disabled) {
+  border-color: rgba(241, 180, 104, 0.32);
+  background: rgba(241, 180, 104, 0.1);
+}
+
+.calendarDay:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+}
+
+.calendarDayMuted {
+  color: rgba(221, 212, 200, 0.45);
+}
+
+.calendarDayToday {
+  border-color: rgba(241, 180, 104, 0.3);
+}
+
+.calendarDaySelected {
+  border-color: rgba(241, 180, 104, 0.58);
+  background: linear-gradient(180deg, rgba(241, 180, 104, 0.28) 0%, rgba(241, 180, 104, 0.16) 100%);
+  color: #fff6ea;
+}
+
+.field label {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(12, 14, 17, 0.72);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(50% - 2px),
+    calc(100% - 14px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.helpText {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.submit {
+  justify-self: start;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(241, 180, 104, 0.52);
+  border-radius: 999px;
+  background: rgba(241, 180, 104, 0.12);
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.submit:hover {
+  background: rgba(241, 180, 104, 0.22);
+}
+
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroCopy,
+  .detailsCard,
+  .formCard {
+    box-shadow: none;
+    background: var(--surface);
+  }
+
+  .heroCopy,
+  .detailsCard,
+  .formCard {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .formCard {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .calendarPopover {
+    width: 100%;
+  }
+}

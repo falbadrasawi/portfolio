@@ -29,8 +29,8 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" className={navLinkClass}>
-            Contact
+          <NavLink to="/consultation" className={navLinkClass}>
+            Consultation
           </NavLink>
         </li>
       </ul>

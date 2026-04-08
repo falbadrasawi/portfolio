@@ -13,6 +13,21 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Fadi Albadrasawi | Portfolio</title>
+    <script>
+      (function redirectSpaRoute(location) {
+        if (location.search[1] === '/') {
+          var decodedPath = location.search
+            .slice(1)
+            .split('&')
+            .map(function (segment) {
+              return segment.replace(/~and~/g, '&');
+            })
+            .join('?');
+
+          window.history.replaceState(null, '', location.pathname.slice(0, -1) + decodedPath + location.hash);
+        }
+      }(window.location));
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -31,10 +31,10 @@ export default function About() {
           </p>
           <p className={styles.bio}>
             My current clients include some of the largest healthcare and education staffing
-            companies in the United States.
+            companies in the United States. I have previously worked with Apple and The Walt Disney Company.
           </p>
           <p className={styles.bio}>
-            Outside of work you can find me with my daughter on the playground or trying to break 180ft to no avail at the driving range.
+            Based in Jacksonville, Florida. Outside of work you can find me with my daughter on the playground or trying to break 180ft to no avail at the driving range.
           </p>
         </div>
       </div>
@@ -45,9 +45,10 @@ export default function About() {
           <ul>
             <li>JavaScript (ES6+), React, Three.js</li>
             <li>PHP, HTML, CSS</li>
-            <li>C# + Unity</li>
+            <li>C# & Unity</li>
             <li>Git and GitHub</li>
-            <li>AWS</li>
+            <li>AWS & Azure</li>
+            <li>Wordpress</li>
           </ul>
         </div>
 

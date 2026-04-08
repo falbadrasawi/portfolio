@@ -11,4 +11,4 @@ Made with these lovely packages and libraries:
 - EmailJS
 
 If you'd like to see more or scheudle a consultation, please visit:
-https://falbadrasawi.github.io/portfolio/
+https://albadrasawi.com

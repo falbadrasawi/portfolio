@@ -22,21 +22,21 @@ export default function About() {
             />
           </div>
         </div>
-        <p className={styles.bio}>
-          I'm Fadi Albadrasawi, a frontend developer and product designer
-          pursuing a BA in Digital Media with a concentration in web design and
-          social platforms. I founded Printii, an additive manufacturing
-          startup, and I am currently researching the economic
-          decision-making process behind virtual environments with physical
-          goods and services.
-        </p>
-        <p className={styles.bio}>
-          My current clients include one of the largest healthcare and education staffing
-          companies in the United States.
-        </p>
-        <p className={styles.bio}>
-          Outside of work you can either catch me with my daughter on the playground or trying to break 180ft drives to no avail at the driving range.
-        </p>
+        <div className={styles.copyColumn}>
+          <p className={styles.bio}>
+            I'm a web developer
+            with a BA in Digital Media from the University of Central Florida. My studies focused on web design and social platforms. I founded Printii, an AI 3D Printing startup, and I am currently researching the economic
+            decision-making process behind virtual environments with physical
+            goods and services.
+          </p>
+          <p className={styles.bio}>
+            My current clients include some of the largest healthcare and education staffing
+            companies in the United States.
+          </p>
+          <p className={styles.bio}>
+            Outside of work you can find me with my daughter on the playground or trying to break 180ft to no avail at the driving range.
+          </p>
+        </div>
       </div>
 
       <div className={styles.sections}>
@@ -44,7 +44,7 @@ export default function About() {
           <h3>Skills</h3>
           <ul>
             <li>JavaScript (ES6+), React, Three.js</li>
-            <li>HTML + CSS</li>
+            <li>PHP, HTML, CSS</li>
             <li>C# + Unity</li>
             <li>Git and GitHub</li>
             <li>AWS</li>

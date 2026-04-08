@@ -49,6 +49,12 @@
   border-radius: 16px;
 }
 
+.copyColumn {
+  display: grid;
+  gap: 1.1rem;
+  align-content: start;
+}
+
 .bio {
   margin: 0;
   font-size: 1.04rem;
